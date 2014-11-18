@@ -16,7 +16,7 @@ public class text_lab_04_matthew_pearce
 			System.out.println();
 			System.out.println("Entered String:     " + str);
 			System.out.println("Palindrome:         " + Palindrome.isPal(str));
-			System.out.println("Almost Palindrome:  " + Palindrome.almostPal(str));	  // used only for the 100 point version
+			System.out.println("Almost Palindrome:  " + Palindrome.almostPal(str));	  
 			System.out.print("Do you wish to repeat this program [Y/N]?  ===>>  ");
 			String repeat = input.nextLine();
 			notFinished = (repeat.equals("Y")) || (repeat.equals("y"));
