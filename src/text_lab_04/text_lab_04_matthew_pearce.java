@@ -44,12 +44,12 @@ class Palindrome
     	 if (i == length)
     	 {
     		 reverse = reverse + s.substring(m);
-    		 System.out.println(reverse);
+    		 //System.out.println(reverse);
     	 }
     	 else
     	 {
     		 reverse = reverse + s.substring(m-1,m); 
-    		 System.out.println(reverse);
+    		 //System.out.println(reverse);
     	 }
     	 
     	 m--;
