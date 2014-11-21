@@ -6,24 +6,19 @@ public class text_lab_04_matthew_pearce
 {
 	public static void main (String args[])
 	{
-		System.out.println("\nTextLab04v80\n");
-      Scanner input = new Scanner(System.in);
-		boolean notFinished = false;
+		System.out.println("\nTextLab04v100_Matthew_Pearce\n");
+		Scanner input = new Scanner(System.in);
+
+		String repeat = "";
 		do
 		{
-			System.out.print("Enter a string  ===>>  ");
+			System.out.print("\nEnter a string  ===>>  ");
 			String str = input.nextLine();
-			System.out.println();
-			System.out.println("Entered String:     " + str);
-			System.out.println("Palindrome:         " + Palindrome.isPal(str));
-			System.out.println("Almost Palindrome:  " + Palindrome.almostPal(str));	  
+			System.out.println("\nEntered String:     " + str + "\nPalindrome:         " + Palindrome.isPal(str) + "\nAlmost Palindrome:  " + Palindrome.almostPal(str));  
 			System.out.print("Do you wish to repeat this program [Y/N]?  ===>>  ");
-			String repeat = input.nextLine();
-			notFinished = (repeat.equals("Y")) || (repeat.equals("y"));
-			System.out.println();
+			repeat = input.nextLine();	
 		}
-		while (notFinished);
-		
+		while (repeat.equalsIgnoreCase("y"));
 		input.close();
 	}
 }
@@ -31,7 +26,7 @@ public class text_lab_04_matthew_pearce
 class Palindrome
 {
 	static String reverse =  "";
-
+	
 	public static boolean isPal(String s)
 	{
      int i = 0;
@@ -42,43 +37,26 @@ class Palindrome
      while (i < length)
      {
     	 if (i == length)
-    	 {
-    		 reverse = reverse + s.substring(m);
-    		 //System.out.println(reverse);
-    	 }
+    		 reverse = reverse + s.substring(m); 
     	 else
-    	 {
     		 reverse = reverse + s.substring(m-1,m); 
-    		 //System.out.println(reverse);
-    	 }
-    	 
+    	
     	 m--;
     	 i++;
      }
 		
 		if ( reverse.equals(s))
-		{
     	  return true;    
-		}
 		else
-		{
     	  return false;  
-		}
-         
 	}  
 	
 	public static boolean almostPal(String s1)
 	{
-		 s1 = s1.replaceAll("[^A-Za-z0-9]", "");
-		String s2 = reverse.replaceAll("[^A-Za-z0-9]", "");
 		
-		if (s2.equalsIgnoreCase(s1))
-		{
+		if (reverse.replaceAll("[^A-Za-z]", "").equalsIgnoreCase(s1.replaceAll("[^A-Za-z]", "")))
 			return true;
-		}
 		else 
-		{
 			return false;
-		}
 	}
 }
